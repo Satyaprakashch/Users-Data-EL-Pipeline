@@ -19,8 +19,8 @@ This documentation provides a comprehensive guide to setting up and running an E
 This FastAPI application allows users to authenticate using their Google accounts, access their Google Sheets data, and append this data to a pre-defined spreadsheet in Google Sheets. Created El(Extract Load) Scheduled Pipeline using Airbyte to sync this Spreadsheet Data to AWS S3.
 
 ### 2. Prerequisites
-Python 3.8 or higher
-Google Cloud account
-AWS account with S3 access
-Airbyte instance for data synchronization
-FastAPI, Uvicorn, and other dependencies
+  Python 3.8 or higher
+  Google Cloud account
+  AWS account with S3 access
+  Airbyte instance for data synchronization
+  FastAPI, Uvicorn, and other dependencies
