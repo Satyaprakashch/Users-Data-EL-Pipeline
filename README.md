@@ -41,9 +41,12 @@ d. Add the required scopes for the application like ['auth/drive', 'auth/spreads
 e. Select Web application type as "Web Application" in Oauth Client ID<br>
 f. In the Authorised JavaScript Origins give the homepage URI Adress and in the Authorised Redirecr URIs List the URIs that you use for this application.<br>
 j. Atlast Download the credentials in JSON Format<br>
-Some Pictures When Developing the Project:<br>
+Some Pictures When Developing the Project:< br / > 
+
 ![image](https://github.com/user-attachments/assets/05000e72-1aff-4e5a-8b50-d857074a980c)
+< br / > 
 ![image](https://github.com/user-attachments/assets/b4d29f42-3cca-4fff-bc33-18fcd7798967)
+< br / > 
 ![image](https://github.com/user-attachments/assets/a386022d-89b7-4c81-b813-54cf913e09fd)
 
 #### Enable Google Sheets APIs:
