@@ -70,7 +70,16 @@ a. Locate to IAM > Users > Create user in AWS Console.<br>
 b. Give the user a Name.<br>
 c. Attach necessary policies to this User so Airbyte can access and write the data to S3.<br> 
 d. Use the below Json Document to create the policy.<br>
-e. Locate to IAM > Users > Username > Security credentials
-f. Create the Access key and download it locally To connect Airbyte to S3.
+e. Locate to IAM > Users > Username > Security credentials<br>
+f. Create the Access key and download it locally To connect Airbyte to S3.<br>
 ![image](https://github.com/user-attachments/assets/9afda3e9-398b-45ca-b230-5995f23e8f1c)
+
+#### 6. Project Structure:
+/project-root
+│
+├── main.py               # FastAPI application code
+├── credentials.json      # Google OAuth credentials
+├── token.json            # OAuth token (generated automatically when user logged in using google acc)
+└── requirements.txt      # Python dependencies
+
 
