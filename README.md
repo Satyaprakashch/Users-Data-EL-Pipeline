@@ -20,10 +20,32 @@ This FastAPI application allows users to authenticate using their Google account
 
 ### 2. Prerequisites
   Python 3.8 or higher<br>
-  Google Cloud account
-  AWS account with S3 access
-  Airbyte instance for data synchronization
-  FastAPI, Uvicorn, and other dependencies
+  Google Cloud account<br>
+  AWS account with S3 access<br>
+  Airbyte instance for data synchronization<br>
 
 ### 3. Google Cloud Project Setup
+#### Create a Google Cloud Project:
+a. Go to Google Cloud Console.<br>
+b. Click on New Project and create a new project.<br>
 
+#### Enable Google Drive APIs:
+a. In the Google Cloud Console, navigate to APIs & Services > Library.<br>
+b. Enable the Google Drive API.<br>
+
+#### Create OAuth Credentials:
+a. Go to APIs & Services > Credentials.<br>
+b. Click on Create Credentials > OAuth client ID.<br>
+c. Share required details like Developer Contact Information.<br>
+d. Add the required scopes for the application like ['auth/drive', 'auth/spreadsheets, 'auth/userinfo.profile]<br>
+e. Select Web application type as "Web Application" in Oauth Client ID<br>
+f. In the Authorised JavaScript Origins give the homepage URI Adress and in the Authorised Redirecr URIs List the URIs that you use for this application.<br>
+j. Atlast Download the credentials in JSON Format<br>
+Some Pictures When Developing the Project:<br>
+![image](https://github.com/user-attachments/assets/05000e72-1aff-4e5a-8b50-d857074a980c)
+![image](https://github.com/user-attachments/assets/b4d29f42-3cca-4fff-bc33-18fcd7798967)
+![image](https://github.com/user-attachments/assets/a386022d-89b7-4c81-b813-54cf913e09fd)
+
+#### Enable Google Sheets APIs:
+a. In the Google Cloud Console, navigate to APIs & Services > Library.<br>
+b. Enable the Google Sheets API.<br>
