@@ -52,3 +52,11 @@ Some Pictures When Developing the Project:<br>
 #### Enable Google Sheets APIs:
 a. In the Google Cloud Console, navigate to APIs & Services > Library.<br>
 b. Enable the Google Sheets API.<br>
+
+####  Google Sheets API Setup
+##### Prepare the Spreadsheet:
+a. Open Google Sheets and create or use an existing spreadsheet and Note the spreadsheet ID (found in the URL of the sheet).<br>
+b. Place the downloaded credentials.json in the project drirectory. This file will be used for OAuth 2.0 authentication.<br>
+
+
+
