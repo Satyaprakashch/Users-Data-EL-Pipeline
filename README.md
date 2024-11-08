@@ -7,13 +7,13 @@ This documentation provides a comprehensive guide to setting up and running an E
 #### 2. Prerequisites
 #### 3. Google Cloud Project Setup
 #### 4. Google Sheets API Setup
-#### 5. Airbyte Setup and Configuration
-#### 6. AWS S3 Configuration
-#### 7. Project Structure
-#### 8. Code Explanation
-#### 9. Running the Project
-#### 10. API Endpoint Details
-#### 11. Error Handling and Troubleshooting
+#### 5. AWS S3 and IAM Configuration 
+#### 6. Project Structure
+#### 7. Code Explanation
+#### 8. Running the Project
+#### 9. API Endpoint Details
+#### 10. Error Handling and Troubleshooting
+#### 11. Airbyte Setup and Configuration
 
 ### 1. Project Overview:
 This FastAPI application allows users to authenticate using their Google accounts, access their Google Sheets data, and append this data to a pre-defined spreadsheet in Google Sheets. Created El(Extract Load) Scheduled Pipeline using Airbyte to sync this Spreadsheet Data to AWS S3.
@@ -53,10 +53,24 @@ Some Pictures When Developing the Project:<br>
 a. In the Google Cloud Console, navigate to APIs & Services > Library.<br>
 b. Enable the Google Sheets API.<br>
 
-####  Google Sheets API Setup
+####  4. Google Sheets API Setup
 ##### Prepare the Spreadsheet:
 a. Open Google Sheets and create or use an existing spreadsheet and Note the spreadsheet ID (found in the URL of the sheet).<br>
 b. Place the downloaded credentials.json in the project drirectory. This file will be used for OAuth 2.0 authentication.<br>
 
+#### 5. AWS S3 and IAM Configuration 
+##### Create S3 Account
+a. Locate to Amazon S3 > Buckets > Create bucket in AWS Console<br>
+b. Create S3 bucket in AWS. Choose the Bucket type - General Purpose<br>
+c. Block all Public access for security reasons.<br>
+d. Enable Server-side encryption with Amazon S3.<br>
 
+##### IAM Configuration for Airbyte
+a. Locate to IAM > Users > Create user in AWS Console.<br>
+b. Give the user a Name.<br>
+c. Attach necessary policies to this User so Airbyte can access and write the data to S3.<br> 
+d. Use the below Json Document to create the policy.<br>
+e. Locate to IAM > Users > Username > Security credentials
+f. Create the Access key and download it locally To connect Airbyte to S3.
+![image](https://github.com/user-attachments/assets/9afda3e9-398b-45ca-b230-5995f23e8f1c)
 
