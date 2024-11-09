@@ -81,16 +81,16 @@ f. Create the Access key and download it locally To connect Airbyte to S3.<br>
 
 #### 7. Code Explanation
 ###### The main components of the code are as follows:
-Imports: The necessary libraries are imported, including FastAPI, Google authentication libraries, and Pydantic for data validation.
-SCOPES: Define scopes required for accessing Google Sheets and user information.
-MY_SPREADSHEET_ID: Give Your Spreadsheet ID, this spreadsheet will save all the users data.
-FastAPI Instance: An instance of FastAPI is created.
-get_service() Function: This function handles authentication and returns a service object to interact with Google Sheets API.
-list_spreadsheets Endpoint: This endpoint retrieves data from a user's spreadsheet and appends it to a predefined spreadsheet.
+Imports: The necessary libraries are imported, including FastAPI, Google authentication libraries, and Pydantic for data validation.<br>
+SCOPES: Define scopes required for accessing Google Sheets and user information.<br>
+MY_SPREADSHEET_ID: Give Your Spreadsheet ID, this spreadsheet will save all the users data.<br>
+FastAPI Instance: An instance of FastAPI is created.<br>
+get_service() Function: This function handles authentication and returns a service object to interact with Google Sheets API.<br>
+list_spreadsheets Endpoint: This endpoint retrieves data from a user's spreadsheet and appends it to a predefined spreadsheet.<br>
 
 #### 8. Running the Project
 
-1) Clone repository into your machine
+1) Clone repository into your machine<br>
 
 ```md
 git clone 
@@ -129,17 +129,17 @@ uvicorn main:app --reload
 #### 9. API Endpoint Details:
 
 ##### a. GET /spreadsheets
-Parameters:
-user_spreadsheet_id: The ID of the user's spreadsheet to fetch data from.
-user_range: The cell range to extract data (e.g., "A1:D10).
-Description: This endpoint retrieves data from a user's specified Google Sheets document and inserts that data into the owner’s predefined Google Sheets document.
-Response: A success message if data is inserted successfully.
+###### Parameters:<br>
+user_spreadsheet_id: The ID of the user's spreadsheet to fetch data from.<br>
+user_range: The cell range to extract data (e.g., "A1:D10).<br>
+Description: This endpoint retrieves data from a user's specified Google Sheets document and inserts that data into the owner’s predefined Google Sheets document.<br>
+Response: A success message if data is inserted successfully.<br>
 ##### b. GET /privacy-policy
-Description: Returns a message that informs the user about the app’s access policy and prompts them to agree if they wish to proceed.
-Response: A string message explaining the data access policy.
+Description: Returns a message that informs the user about the app’s access policy and prompts them to agree if they wish to proceed.<br>
+Response: A string message explaining the data access policy.<br>
 ##### c. GET /
-Description: A simple root endpoint to check if the application is running.
-Response: A dictionary with the message "Application was running".
+Description: A simple root endpoint to check if the application is running.<br>
+Response: A dictionary with the message "Application was running".<br>
 ##### d. Swagger UI (Give you detailed documentation about the end Points)
     ```linux
     http://localhost:8000/docs
@@ -147,23 +147,23 @@ Response: A dictionary with the message "Application was running".
     
 #### 10. Airbyte Setup and Configuration:
 ###### 1. Setup Google sheets as Source
-a. In Airbyte Source select Google Sheets as Source
-b. Authenticate with Google Oauth2.0 that we have already configured in our Google Project.
-c. Copy your spreadsheet link that contains the users data.
-d. Test the Source
-![image](https://github.com/user-attachments/assets/41406554-6755-4c3c-a765-c93f8bc0a3b8)
+a. In Airbyte Source select Google Sheets as Source<br>
+b. Authenticate with Google Oauth2.0 that we have already configured in our Google Project.<br>
+c. Copy your spreadsheet link that contains the users data.<br>
+d. Test the Source<br>
+![image](https://github.com/user-attachments/assets/41406554-6755-4c3c-a765-c93f8bc0a3b8)<br>
 
 ###### 2. Setup S3 as Destination
-a. In Airbyte destination select S3 as Destination.
-b. Configure Destination with your AWS Access key ID, Secret Access key
-c. Give your AWS S3 Bucket name, Bucket path and Bucket region that you have already created in AWS 
-d. Test the destination
-![image](https://github.com/user-attachments/assets/e009785f-9471-4fdb-84b1-8be9733024f3)
+a. In Airbyte destination select S3 as Destination.<br>
+b. Configure Destination with your AWS Access key ID, Secret Access key<br>
+c. Give your AWS S3 Bucket name, Bucket path and Bucket region that you have already created in AWS<br>
+d. Test the destination<br>
+![image](https://github.com/user-attachments/assets/e009785f-9471-4fdb-84b1-8be9733024f3)<br>
 
 ###### 3. Create the Connection between Source and Destination
-a. Select the existing Google sheets as source for this connection.
-b. Select the existing Aws s3 destination as destination for this connection.
-c. Select Sync mode either Replicate source or Append Historical changes.
-d. Select Replication frequency as Every hour 
-![image](https://github.com/user-attachments/assets/d22373d9-0409-4d37-9f48-592004b54126)
-It will Sync your google sheet data to Aws S3 every 1 Hour without human intervention.
+a. Select the existing Google sheets as source for this connection.<br>
+b. Select the existing Aws s3 destination as destination for this connection.<br>
+c. Select Sync mode either Replicate source or Append Historical changes.<br>
+d. Select Replication frequency as Every hour<br>
+![image](https://github.com/user-attachments/assets/d22373d9-0409-4d37-9f48-592004b54126)<br>
+It will Sync your google sheet data to Aws S3 every 1 Hour without human intervention.<br>
