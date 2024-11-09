@@ -80,4 +80,13 @@ f. Create the Access key and download it locally To connect Airbyte to S3.<br>
 ├── token.json &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # OAuth token (generated automatically when user logged in using google acc)<br>
 └── requirements.txt &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Python dependencies<br>
 
+#### 7. Code Explanation
+The main components of the code are as follows:
+####### Imports: The necessary libraries are imported, including FastAPI, Google authentication libraries, and Pydantic for data validation.
+####### SCOPES: Define scopes required for accessing Google Sheets and user information.
+####### FastAPI Instance: An instance of FastAPI is created.
+####### get_service() Function: This function handles authentication and returns a service object to interact with Google Sheets API.
+####### list_spreadsheets Endpoint: This endpoint retrieves data from a user's spreadsheet and appends it to a predefined spreadsheet.
+
+
 
