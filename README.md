@@ -12,8 +12,7 @@ This documentation provides a comprehensive guide to setting up and running an E
 #### 7. Code Explanation
 #### 8. Running the Project
 #### 9. API Endpoint Details
-#### 10. Error Handling and Troubleshooting
-#### 11. Airbyte Setup and Configuration
+#### 10. Airbyte Setup and Configuration
 
 ### 1. Project Overview:
 This FastAPI application allows users to authenticate using their Google accounts, access their Google Sheets data, and append this data to a pre-defined spreadsheet in Google Sheets. Created El(Extract Load) Scheduled Pipeline using Airbyte to sync this Spreadsheet Data to AWS S3.
@@ -84,6 +83,7 @@ f. Create the Access key and download it locally To connect Airbyte to S3.<br>
 ###### The main components of the code are as follows:
 Imports: The necessary libraries are imported, including FastAPI, Google authentication libraries, and Pydantic for data validation.
 SCOPES: Define scopes required for accessing Google Sheets and user information.
+MY_SPREADSHEET_ID: Give Your Spreadsheet ID, this spreadsheet will save all the users data.
 FastAPI Instance: An instance of FastAPI is created.
 get_service() Function: This function handles authentication and returns a service object to interact with Google Sheets API.
 list_spreadsheets Endpoint: This endpoint retrieves data from a user's spreadsheet and appends it to a predefined spreadsheet.
@@ -126,8 +126,23 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-## Documentation (Fastapi provides detailed docs using swagger UI for all the code)
-1. Swagger UI
+#### 9. API Endpoint Details:
 
+##### a. GET /spreadsheets
+Parameters:
+user_spreadsheet_id: The ID of the user's spreadsheet to fetch data from.
+user_range: The cell range to extract data (e.g., "A1:D10).
+Description: This endpoint retrieves data from a user's specified Google Sheets document and inserts that data into the owner’s predefined Google Sheets document.
+Response: A success message if data is inserted successfully.
+##### b. GET /privacy-policy
+Description: Returns a message that informs the user about the app’s access policy and prompts them to agree if they wish to proceed.
+Response: A string message explaining the data access policy.
+##### c. GET /
+Description: A simple root endpoint to check if the application is running.
+Response: A dictionary with the message "Application was running".
+##### d. Swagger UI (Give you detailed documentation about the end Points)
     ```linux
     http://localhost:8000/docs
+    ```
+    
+#### 10. Airbyte Setup and Configuration:
