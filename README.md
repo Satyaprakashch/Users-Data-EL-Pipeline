@@ -75,7 +75,7 @@ f. Create the Access key and download it locally To connect Airbyte to S3.<br>
 #### 6. Project Structure:
 /project-root<br>
 │<br>
-├── main.py               # FastAPI application code<br>
+├── main.py &nbsp; &nbsp; &nbsp;           # FastAPI application code<br>
 ├── credentials.json      # Google OAuth credentials<br>
 ├── token.json            # OAuth token (generated automatically when user logged in using google acc)<br>
 └── requirements.txt      # Python dependencies<br>
