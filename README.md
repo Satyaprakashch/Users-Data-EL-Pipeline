@@ -146,3 +146,24 @@ Response: A dictionary with the message "Application was running".
     ```
     
 #### 10. Airbyte Setup and Configuration:
+###### 1. Setup Google sheets as Source
+a. In Airbyte Source select Google Sheets as Source
+b. Authenticate with Google Oauth2.0 that we have already configured in our Google Project.
+c. Copy your spreadsheet link that contains the users data.
+d. Test the Source
+![image](https://github.com/user-attachments/assets/41406554-6755-4c3c-a765-c93f8bc0a3b8)
+
+###### 2. Setup S3 as Destination
+a. In Airbyte destination select S3 as Destination.
+b. Configure Destination with your AWS Access key ID, Secret Access key
+c. Give your AWS S3 Bucket name, Bucket path and Bucket region that you have already created in AWS 
+d. Test the destination
+![image](https://github.com/user-attachments/assets/e009785f-9471-4fdb-84b1-8be9733024f3)
+
+###### 3. Create the Connection between Source and Destination
+a. Select the existing Google sheets as source for this connection.
+b. Select the existing Aws s3 destination as destination for this connection.
+c. Select Sync mode either Replicate source or Append Historical changes.
+d. Select Replication frequency as Every hour 
+![image](https://github.com/user-attachments/assets/d22373d9-0409-4d37-9f48-592004b54126)
+It will Sync your google sheet data to Aws S3 every 1 Hour without human intervention.
