@@ -167,3 +167,6 @@ c. Select Sync mode either Replicate source or Append Historical changes.<br>
 d. Select Replication frequency as Every hour<br>
 ![image](https://github.com/user-attachments/assets/d22373d9-0409-4d37-9f48-592004b54126)<br>
 It will Sync your google sheet data to Aws S3 every 1 Hour without human intervention.<br>
+In the below Image you can see it synced the data from google sheets to AWS S3 every 1 hour.
+![image](https://github.com/user-attachments/assets/e2db61c8-0f77-4041-90c7-3a85aae7de47)
+
